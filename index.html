@@ -19,22 +19,21 @@
                 var dt = new Date();
                 var d = dt.getDay();
                 var t = dt.getHours() + dt.getMinutes() / 60;
-                console.info(t);
                 var tot = 0;
                 var tct = 0;
                 var sot = 0;
                 var sct = 0;
                 switch(d) {
-                    case 0: toh = 12; tch = 16;
-                    case 1: toh = 12; tch = 18;
-                    case 2: toh = 12; tch = 18;
-                    case 3: toh = 12; tch = 20; soh = 11; sch = 16;
-                    case 4: toh = 12; tch = 20; soh = 11; sch = 16;
-                    case 5: toh = 12; tch = 20; soh = 11; sch = 18;
-                    case 6: toh = 12; tch = 20; soh = 11; sch = 16;
+                    case 0: { tot = 12; tct = 16; break; }
+                    case 1: { tot = 12; tct = 18; break; }
+                    case 2: { tot = 12; tct = 18; break; }
+                    case 3: { tot = 12; tct = 20; sot = 11; sct = 16; break; }
+                    case 4: { tot = 12; tct = 20; sot = 11; sct = 16; break; }
+                    case 5: { tot = 12; tct = 20; sot = 11; sct = 18; break; }
+                    case 6: { tot = 12; tct = 20; sot = 11; sct = 16; break; }
                 }
-                var to = t >= toh && t < tch;
-                var so = t >= soh && t < sch;
+                var to = t >= tot && t < tct;
+                var so = t >= sot && t < sct;
                 document.getElementById('t').innerHTML = icon(to);
                 document.getElementById('s').innerHTML = icon(so);
             }
